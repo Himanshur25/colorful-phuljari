@@ -1,0 +1,48 @@
+
+body {
+	background: black;
+	overflow: hidden;
+	color: white;
+	--color-spark: peru;
+}
+
+#sparkler {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 1px;
+	height: 1px;
+	transform: rotate(-25deg);
+	border-radius: 50%;
+	box-shadow: 0 0 2500px 100px var(--color-spark);
+}
+#sparkler:before {
+	content: '';
+	width: 10px;
+	height: 25vh;
+	background: linear-gradient(to right, dimgray, silver);
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 1rem;
+}
+#sparkler:after {
+	content: '';
+	width: 4px;
+	height: 25vh;
+	background: linear-gradient(to right, dimgray, gray);
+	position: absolute;
+	top: calc(25vh - 1px);
+	left: 3px;
+/* 	border-radius: 1rem; */
+}
+
+.particle {
+	height: 5px;
+	border-radius: 50%;
+	background: linear-gradient(to right, transparent, var(--color-spark), white, var(--color-spark), transparent);
+	box-shadow: 0 0 30px var(--color-spark);
+	position: absolute;
+	transition: .5s linear;
+	z-index: 100;
+}
